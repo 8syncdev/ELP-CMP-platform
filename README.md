@@ -1,6 +1,6 @@
 # 🚀 ELP (E-Learning Platform) - CMP (Communication Model Protocol)
 
-- **Nguyễn Phương Anh Tú** - Lead Developer
+- **Nguyễn Phương Anh Tú** - Leader Project
 - **YouTube**: [https://www.youtube.com/@Dev8Sync/featured](https://www.youtube.com/@Dev8Sync/featured)
 - **Facebook**: [https://www.facebook.com/8sync](https://www.facebook.com/8sync)
 - **TikTok**: [https://www.tiktok.com/@8_sync](https://www.tiktok.com/@8_sync)
