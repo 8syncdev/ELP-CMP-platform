@@ -1,5 +1,14 @@
 # 🚀 ELP (E-Learning Platform) - CMP (Communication Model Protocol)
 
+- **Nguyễn Phương Anh Tú** - Lead Developer
+- **YouTube**: [https://www.youtube.com/@Dev8Sync/featured](https://www.youtube.com/@Dev8Sync/featured)
+- **Facebook**: [https://www.facebook.com/8sync](https://www.facebook.com/8sync)
+- **TikTok**: [https://www.tiktok.com/@8_sync](https://www.tiktok.com/@8_sync)
+- **Zalo**: [https://zalo.me/0703930513](https://zalo.me/0703930513)
+- **Zalo Group**: [https://zalo.me/g/mitxdi486](https://zalo.me/g/mitxdi486)
+- **Email**: 8sync.dev.1111@gmail.com
+- **Website**: [https://8syncdev.com/](https://8syncdev.com/)
+
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Version](https://img.shields.io/badge/version-1.0.0-green.svg)
 ![Status](https://img.shields.io/badge/status-development-orange.svg)
