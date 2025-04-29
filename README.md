@@ -7,7 +7,8 @@
 - **Zalo**: [https://zalo.me/0703930513](https://zalo.me/0703930513)
 - **Zalo Group**: [https://zalo.me/g/mitxdi486](https://zalo.me/g/mitxdi486)
 - **Email**: 8sync.dev.1111@gmail.com
-- **Website**: [https://8syncdev.com/](https://8syncdev.com/)
+- **Website Chính**: [https://8syncdev.com/](https://8syncdev.com/)
+- **Website Phụ**: [https://syncdev8.com/](https://syncdev8.com/)
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Version](https://img.shields.io/badge/version-1.0.0-green.svg)
