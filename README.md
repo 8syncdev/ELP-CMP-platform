@@ -193,11 +193,15 @@ capstone-project/
 | Tìm kiếm thông tin | ✅ | Tìm kiếm thông tin từ internet |
 | Tóm tắt nội dung | ✅ | Tự động tóm tắt nội dung dài |
 | Trích xuất câu hỏi | ✅ | Tạo câu hỏi ôn tập từ nội dung |
-| Thanh toán | ⏳ | Xử lý thanh toán khóa học |
-| Thông báo | ✅ | Gửi thông báo đến người dùng |
-| Phân tích dữ liệu | ⏳ | Thống kê và báo cáo |
+| Thanh toán | ✅ | Xử lý thanh toán khóa học |
+| Thông báo | ✅ | Gửi thông báo đến người dùng 
+| Chấm Code | ✅ | Chấm code realtime |
+| CMP | ✅ | AI tự thảo luận |
+| Phân tích dữ liệu | ✅ | Thống kê và báo cáo |
 | Học tập cộng tác | 🔜 | Học nhóm và tương tác |
 | Ứng dụng di động | 🔜 | Phiên bản cho điện thoại và máy tính bảng |
+
+> Lưu ý còn rất nhiều tính năng trong ứng dụng, đây chỉ là tính năng quan trọng.
 
 *Chú thích: ✅ Hoàn thành | ⏳ Đang phát triển | 🔜 Dự kiến*
 
