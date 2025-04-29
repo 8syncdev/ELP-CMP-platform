@@ -1,0 +1,22 @@
+{
+  "name": "e-learning-encore-ynoi",
+  "private": true,
+  "version": "0.0.1",
+  "description": "E-learning Encore",
+  "license": "MPL-2.0",
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^20.5.7",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "drizzle-orm": "^0.38.2",
+    "encore.dev": "^1.45.7",
+    "firebase": "^11.1.0",
+    "gray-matter": "^4.0.3"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.13.0"
+  }
+}

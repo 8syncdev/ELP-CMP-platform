@@ -1,0 +1,49 @@
+{
+    "fields": [
+        {
+            "name": "id",
+            "type": "INT",
+            "value_type": "auto_increment",
+            "start_value": 1
+        },
+        {
+            "name": "course_id",
+            "type": "INT",
+            "value_type": "fixed",
+            "fixed_value": 2
+        },
+        {
+            "name": "slug",
+            "type": "TEXT",
+            "value_type": "frontmatter",
+            "required": true
+        },
+        {
+            "name": "content",
+            "type": "TEXT",
+            "value_type": "frontmatter",
+            "required": true,
+            "default": ""
+        },
+        {
+            "name": "testcases",
+            "type": "JSONB",
+            "value_type": "frontmatter",
+            "required": true,
+            "default": "{}"
+        },
+        {
+            "name": "metadata",
+            "type": "JSONB",
+            "value_type": "frontmatter",
+            "required": true
+        },
+        {
+            "name": "solution",
+            "type": "TEXT",
+            "value_type": "frontmatter",
+            "required": true,
+            "default": ""
+        }
+    ]
+}

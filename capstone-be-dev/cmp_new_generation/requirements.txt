@@ -1,0 +1,37 @@
+# Backend
+fastapi
+sqlmodel
+uvicorn
+
+# LLM
+langchain # LLM
+langchain-ollama # LLM
+langchain-community # Runnable
+langchain-experimental # Runnable
+# API Key
+# langchain-openai # LLM
+langchain-mistralai # LLM
+langchain-postgres # Vector Store
+
+# Postgres
+psycopg2-binary
+psycopg-binary
+
+
+# Dotenv
+python-dotenv
+
+# NLP
+sumy
+# underthesea
+
+# Youtube transcript
+youtube-transcript-api # Web Scraping
+
+# Web Scraping
+trafilatura
+requests
+googlesearch-python
+urlextract
+
+

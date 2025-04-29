@@ -1,0 +1,3 @@
+dùng shadcnui, icon lucid, thiết kế chuẩn UI/UX cho trang @page.tsx tạo các file components ở @pages 
+
+ @learning @contexts @lesson  

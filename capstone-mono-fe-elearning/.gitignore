@@ -1,0 +1,8 @@
+.qodo
+# all sql files
+*.sql
+# all env files
+*.env
+# all log files
+*.log
+

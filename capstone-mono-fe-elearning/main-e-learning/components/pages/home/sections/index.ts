@@ -1,0 +1,5 @@
+export * from './intro-section'
+export { default as ExerciseSection } from './exercise-section'
+export { default as LessonSection } from './lesson-section'
+export { default as ContactSection } from './contact-section'
+export { default as TrialAiSection } from './trialai-section'

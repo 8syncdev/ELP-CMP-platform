@@ -1,0 +1,19 @@
+.encore
+encore.gen.go
+encore.gen.cue
+/.encore
+node_modules
+/encore.gen
+ex-docs
+
+**/mdx/**
+.qodo
+
+.qodo
+# all sql files
+*.sql
+# all env files
+*.env
+# all log files
+*.log
+
