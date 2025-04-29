@@ -1,233 +1,280 @@
-# 🚀 Capstone Project - E-Learning Platform
+# 🚀 ELP (E-Learning Platform) - CMP (Communication Model Protocol)
 
-## 📑 Mục lục
-- [Tổng quan dự án](#tổng-quan-dự-án)
-- [Kiến trúc hệ thống](#kiến-trúc-hệ-thống)
-- [Thành phần dự án](#thành-phần-dự-án)
-  - [Backend](#backend)
-  - [Frontend](#frontend)
-- [Thiết lập môi trường phát triển](#thiết-lập-môi-trường-phát-triển)
-- [Hướng dẫn chạy toàn bộ hệ thống](#hướng-dẫn-chạy-toàn-bộ-hệ-thống)
-- [Quản lý dự án và workflow](#quản-lý-dự-án-và-workflow)
-- [Đóng góp](#đóng-góp)
-- [Giấy phép](#giấy-phép)
-- [Liên hệ](#liên-hệ)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Version](https://img.shields.io/badge/version-1.0.0-green.svg)
+![Status](https://img.shields.io/badge/status-development-orange.svg)
 
-## 🌟 Tổng quan dự án
+<p align="center">
+  <img src="https://placehold.co/600x400?text=ELP-CMP" alt="ELP - CMP" width="400"/>
+</p>
 
-Dự án Capstone E-Learning Platform là một hệ thống học tập trực tuyến toàn diện được phát triển bởi nhóm Nguyễn Phương Anh Tú. Dự án kết hợp nhiều công nghệ hiện đại để tạo ra trải nghiệm học tập tương tác, cá nhân hóa và hiệu quả.
+## 📑 Tổng quan
 
-Hệ thống bao gồm các thành phần chính:
-- **NextJS Frontend**: Giao diện người dùng hiện đại
-- **Python Backend**: API và xử lý dữ liệu 
-- **AI Integration**: Tích hợp mô hình ngôn ngữ lớn (LLMs)
-- **Admin Dashboard**: Quản lý toàn diện hệ thống
+**Capstone E-Learning Platform** là một nền tảng học tập trực tuyến toàn diện được phát triển như một dự án capstone. Hệ thống được thiết kế với kiến trúc microservices, kết hợp công nghệ AI tiên tiến để tạo ra trải nghiệm học tập tương tác và cá nhân hóa cao.
 
-Dự án hướng đến việc cung cấp nền tảng học tập toàn diện, tích hợp AI để hỗ trợ người học, và hệ thống quản trị linh hoạt cho đội ngũ vận hành.
+### 📌 Đặc điểm nổi bật
+
+- **Nền tảng học tập đa chức năng** với nội dung khóa học phong phú và tương tác
+- **Trợ lý AI thông minh** hỗ trợ việc học tập và trả lời câu hỏi
+- **Hệ thống quản lý học tập** toàn diện cho người học và giáo viên
+- **Hệ thống quản trị mạnh mẽ** cho phép kiểm soát mọi khía cạnh của nền tảng
+- **Kiến trúc microservices** đảm bảo khả năng mở rộng và bảo trì dễ dàng
+- **Tích hợp công nghệ AI** để tạo trải nghiệm học tập cá nhân hóa
 
 ## 🏗️ Kiến trúc hệ thống
 
 ```mermaid
 graph TB
-    User[Người dùng] --> FE[Frontend]
-    Admin[Quản trị viên] --> AdminPanel[Admin Dashboard]
-    
-    subgraph "Frontend Layer"
-        FE --> MainApp[Main E-Learning App]
-        FE --> ChatAI[Chat AI LLMs]
-        AdminPanel --> AdminDashboard[Admin Dashboard]
+    subgraph "Frontend"
+        A1[Main E-Learning App]
+        A2[Admin Dashboard]
+        A3[Chat AI App]
     end
     
-    subgraph "Backend Layer"
-        MainApp --> API[API Gateway]
-        ChatAI --> API
-        AdminDashboard --> API
+    subgraph "Backend Services"
+        B1[API Gateway]
         
-        API --> CMP[CMP Service]
-        API --> Encore[Encore API]
+        subgraph "Encore E-Learning API"
+            C1[User Service]
+            C2[Course Service]
+            C3[Payment Service]
+            C4[Notification Service]
+        end
+        
+        subgraph "CMP New Generation"
+            D1[AI Assistant]
+            D2[Search Service]
+            D3[Summarization]
+            D4[Question Extraction]
+        end
     end
     
-    subgraph "Database Layer"
-        CMP --> CMPDB[(Vector Database)]
-        Encore --> EnDB[(PostgreSQL)]
+    subgraph "Database"
+        E1[(PostgreSQL)]
+        E2[(MongoDB)]
+        E3[(Redis)]
     end
     
     subgraph "External Services"
-        CMP --> MistralAI[Mistral AI]
-        CMP --> GoogleSearch[Google Search]
+        F1[Google API]
+        F2[Payment Gateway]
+        F3[Email Service]
+        F4[LLM Models]
     end
     
-    style "Frontend Layer" fill:#f5f5f5,stroke:#333,stroke-width:1px
-    style "Backend Layer" fill:#e1f5fe,stroke:#333,stroke-width:1px
-    style "Database Layer" fill:#e8f5e9,stroke:#333,stroke-width:1px
-    style "External Services" fill:#fff8e1,stroke:#333,stroke-width:1px
+    A1 --> B1
+    A2 --> B1
+    A3 --> B1
+    
+    B1 --> C1
+    B1 --> C2
+    B1 --> C3
+    B1 --> C4
+    B1 --> D1
+    B1 --> D2
+    B1 --> D3
+    B1 --> D4
+    
+    C1 --> E1
+    C2 --> E1
+    C3 --> E1
+    C4 --> E1
+    
+    D1 --> E2
+    D2 --> E2
+    D3 --> E2
+    D4 --> E2
+    
+    C1 --> E3
+    D1 --> E3
+    
+    D1 --> F4
+    D2 --> F1
+    C3 --> F2
+    C4 --> F3
+    
+    classDef frontend fill:#f9d6d2,stroke:#333,stroke-width:1px;
+    classDef gateway fill:#d2e5f9,stroke:#333,stroke-width:1px;
+    classDef encore fill:#d2f9d6,stroke:#333,stroke-width:1px;
+    classDef cmp fill:#f9f9d2,stroke:#333,stroke-width:1px;
+    classDef database fill:#d2d2f9,stroke:#333,stroke-width:1px;
+    classDef external fill:#f9d2f9,stroke:#333,stroke-width:1px;
+    
+    class A1,A2,A3 frontend;
+    class B1 gateway;
+    class C1,C2,C3,C4 encore;
+    class D1,D2,D3,D4 cmp;
+    class E1,E2,E3 database;
+    class F1,F2,F3,F4 external;
 ```
 
-## 📦 Thành phần dự án
+## 🌟 Các thành phần chính
 
-### Backend
+### 1. Frontend Monorepo
 
-#### 1. [CMP New Generation](/capstone-be-dev/cmp_new_generation/README.md)
-- **Mô tả**: Communication Model Protocol - hệ thống xử lý giao tiếp với AI
-- **Công nghệ**: Python, FastAPI, Langchain, Mistral AI
-- **Tính năng chính**: Tìm kiếm thông tin, tóm tắt, trò chuyện AI
+Hệ thống frontend được phát triển theo mô hình monorepo gồm 3 ứng dụng chính:
 
-#### 2. [Encore Backend API](/capstone-be-dev/cp-be-encore-clean/README.md)
-- **Mô tả**: Backend API chính cho E-Learning Platform
-- **Công nghệ**: Python, FastAPI, SQLAlchemy, PostgreSQL
-- **Tính năng chính**: Quản lý khóa học, bài học, người dùng, thanh toán
+- [**Main E-Learning Application**](./capstone-mono-fe-elearning/README.md): Ứng dụng học tập chính dành cho học viên
+- [**Admin Dashboard**](./capstone-mono-fe-elearning/README.md): Giao diện quản trị dành cho giáo viên và quản trị viên
+- [**Chat AI Application**](./capstone-mono-fe-elearning/README.md): Ứng dụng trò chuyện AI tích hợp
 
-### Frontend
+### 2. Backend Services
 
-#### 1. [Main E-Learning](/capstone-mono-fe-elearning/main-e-learning/README.md)
-- **Mô tả**: Ứng dụng chính dành cho học viên
-- **Công nghệ**: Next.js 15, React 19, TypeScript, TailwindCSS
-- **Tính năng chính**: Khóa học, bài học, bài tập, thanh toán
+Hệ thống backend gồm 2 nhóm dịch vụ chính:
 
-#### 2. [Chat AI LLMs Fine-tune](/capstone-mono-fe-elearning/chat-ai-llms-fintune/README.md)
-- **Mô tả**: Tích hợp trò chuyện AI để hỗ trợ học tập
-- **Công nghệ**: Next.js, React, Mistral AI SDK
-- **Tính năng chính**: Trò chuyện thông minh, voice-to-text, hỗ trợ đa ngôn ngữ
+- [**CMP New Generation**](./capstone-be-dev/README.md): Hệ thống xử lý AI và tương tác ngôn ngữ tự nhiên
+  - **AI Assistant**: Trợ lý AI cho việc học tập
+  - **Search Service**: Dịch vụ tìm kiếm thông tin
+  - **Summarization**: Tóm tắt nội dung từ nhiều nguồn
+  - **Question Extraction**: Trích xuất câu hỏi từ nội dung
 
-#### 3. [Admin E-Learning Dashboard](/capstone-mono-fe-elearning/admin-e-learning/README.md)
-- **Mô tả**: Bảng điều khiển quản trị cho hệ thống
-- **Công nghệ**: Next.js, React, Recharts, TanStack Table
-- **Tính năng chính**: Quản lý người dùng, khóa học, nội dung, báo cáo
+- [**Encore E-Learning API**](./capstone-be-dev/README.md): Hệ thống quản lý dữ liệu và API chính
+  - **User Service**: Quản lý người dùng và xác thực
+  - **Course Service**: Quản lý khóa học và nội dung
+  - **Payment Service**: Xử lý thanh toán và đăng ký
+  - **Notification Service**: Quản lý thông báo và email
 
-## 🛠️ Thiết lập môi trường phát triển
+## 📂 Cấu trúc thư mục dự án
+
+```
+capstone-project/
+├── capstone-be-dev/                # Backend services
+│   ├── cmp_new_generation/         # CMP AI service
+│   │   ├── src/                    # Mã nguồn
+│   │   ├── tests/                  # Unit tests
+│   │   ├── .env.example            # Cấu hình môi trường mẫu
+│   │   ├── Dockerfile              # Docker configuration
+│   │   └── README.md               # Tài liệu
+│   │
+│   ├── cp-be-encore-elearn/        # E-Learning API service
+│   │   ├── src/                    # Mã nguồn
+│   │   ├── tests/                  # Unit tests
+│   │   ├── .env.example            # Cấu hình môi trường mẫu
+│   │   ├── Dockerfile              # Docker configuration
+│   │   └── README.md               # Tài liệu
+│   │
+│   ├── docker-compose.yml          # Docker compose configuration
+│   └── README.md                   # Backend documentation
+│
+├── capstone-mono-fe-elearning/     # Frontend monorepo
+│   ├── main-e-learning/            # Main student application
+│   │   ├── public/                 # Static files
+│   │   ├── src/                    # Source code
+│   │   └── README.md               # Documentation
+│   │
+│   ├── admin-e-learning/           # Admin dashboard
+│   │   ├── public/                 # Static files
+│   │   ├── src/                    # Source code
+│   │   └── README.md               # Documentation
+│   │
+│   ├── chat-ai-llms-fintune/       # AI Chat application
+│   │   ├── public/                 # Static files
+│   │   ├── src/                    # Source code
+│   │   └── README.md               # Documentation
+│   │
+│   ├── shared/                     # Shared components and utilities
+│   └── README.md                   # Frontend documentation
+│
+├── scripts/                        # Utility scripts
+├── docs/                           # Project documentation
+├── .github/                        # GitHub workflows
+├── docker-compose.yml              # Root docker compose
+└── README.md                       # This file
+```
+
+## 📋 Bảng tính năng
+
+| Tính năng | Trạng thái | Mô tả |
+|-----------|---------|-------------|
+| Quản lý người dùng | ✅ | Đăng ký, đăng nhập, quản lý hồ sơ |
+| Quản lý khóa học | ✅ | Tạo, chỉnh sửa, xem khóa học |
+| Quản lý nội dung | ✅ | Upload và tổ chức nội dung học tập |
+| Trợ lý AI | ✅ | Hỗ trợ học tập bằng AI |
+| Tìm kiếm thông tin | ✅ | Tìm kiếm thông tin từ internet |
+| Tóm tắt nội dung | ✅ | Tự động tóm tắt nội dung dài |
+| Trích xuất câu hỏi | ✅ | Tạo câu hỏi ôn tập từ nội dung |
+| Thanh toán | ⏳ | Xử lý thanh toán khóa học |
+| Thông báo | ✅ | Gửi thông báo đến người dùng |
+| Phân tích dữ liệu | ⏳ | Thống kê và báo cáo |
+| Học tập cộng tác | 🔜 | Học nhóm và tương tác |
+| Ứng dụng di động | 🔜 | Phiên bản cho điện thoại và máy tính bảng |
+
+*Chú thích: ✅ Hoàn thành | ⏳ Đang phát triển | 🔜 Dự kiến*
+
+## 🚀 Khởi động dự án
 
 ### Yêu cầu hệ thống
-- Node.js 18.17+ (Frontend)
-- Python 3.10+ (Backend)
-- PostgreSQL 14+ (Database)
-- Docker & Docker Compose (Tùy chọn)
+- Docker và Docker Compose
+- Node.js 18+ (cho phát triển frontend)
+- Python 3.10+ (cho phát triển backend)
 - Git
 
-### Cài đặt toàn bộ dự án
+### Cài đặt với Docker
 
-1. Clone repository:
 ```bash
+# Clone repository
 git clone https://github.com/yourusername/capstone-project.git
 cd capstone-project
+
+# Khởi động toàn bộ hệ thống
+docker-compose up -d
+
+# Hoặc khởi động từng phần riêng biệt
+docker-compose up -d frontend  # Chỉ khởi động frontend
+docker-compose up -d backend   # Chỉ khởi động backend
 ```
 
-2. Thiết lập Backend:
-```bash
-# CMP Service
-cd capstone-be-dev/cmp_new_generation
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-pip install -r requirements.txt
-cp .env.example .env  # Cập nhật biến môi trường
+### Cài đặt thủ công
 
-# Encore API
-cd ../cp-be-encore-clean
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-pip install -r requirements.txt
-cp .env.example .env  # Cập nhật biến môi trường
-```
-
-3. Thiết lập Frontend:
 ```bash
-# Main E-Learning
-cd ../../capstone-mono-fe-elearning/main-e-learning
+# Clone repository
+git clone https://github.com/yourusername/capstone-project.git
+cd capstone-project
+
+# Cài đặt và chạy backend
+cd capstone-be-dev
+# Xem hướng dẫn chi tiết trong README của các service
+
+# Cài đặt và chạy frontend
+cd capstone-mono-fe-elearning
 npm install
-cp .env.example .env.local  # Cập nhật biến môi trường
-
-# Chat AI
-cd ../chat-ai-llms-fintune
-npm install
-cp .env.example .env.local  # Cập nhật biến môi trường
-
-# Admin Dashboard
-cd ../admin-e-learning
-npm install
-cp .env.example .env.local  # Cập nhật biến môi trường
-```
-
-### Sử dụng Docker (tùy chọn)
-
-Chúng tôi cung cấp Docker Compose để dễ dàng chạy toàn bộ hệ thống:
-
-```bash
-docker-compose up
-```
-
-Cấu hình Docker có thể tìm thấy trong file `docker-compose.yml`.
-
-## 🚀 Hướng dẫn chạy toàn bộ hệ thống
-
-### Chạy Backend Services
-
-1. CMP Service:
-```bash
-cd capstone-be-dev/cmp_new_generation
-source venv/bin/activate  # Windows: venv\Scripts\activate
-uvicorn main:app --reload --port 8000
-```
-
-2. Encore API:
-```bash
-cd capstone-be-dev/cp-be-encore-clean
-source venv/bin/activate  # Windows: venv\Scripts\activate
-uvicorn main:app --reload --port 8001
-```
-
-### Chạy Frontend Applications
-
-1. Main E-Learning:
-```bash
-cd capstone-mono-fe-elearning/main-e-learning
+npm run bootstrap
 npm run dev
-# Truy cập: http://localhost:3000
 ```
 
-2. Chat AI:
+## 🧪 Testing
+
 ```bash
-cd capstone-mono-fe-elearning/chat-ai-llms-fintune
-npm run dev
-# Truy cập: http://localhost:3001
+# Chạy tất cả tests
+npm run test
+
+# Chạy tests cho backend
+cd capstone-be-dev
+# Xem hướng dẫn chi tiết trong README của các service
+
+# Chạy tests cho frontend
+cd capstone-mono-fe-elearning
+npm run test
 ```
 
-3. Admin Dashboard:
-```bash
-cd capstone-mono-fe-elearning/admin-e-learning
-npm run dev
-# Truy cập: http://localhost:3002
-```
+## 📢 API Documentation
 
-## 📋 Quản lý dự án và workflow
+API documentation có sẵn qua Swagger UI sau khi khởi động các services:
 
-### Cấu trúc branch
-- `main`: Branch chính, production-ready code
-- `develop`: Branch phát triển chính
-- `feature/*`: Các tính năng mới
-- `bugfix/*`: Sửa lỗi
-- `release/*`: Chuẩn bị release
+- Encore E-Learning API: http://localhost:8000/docs
+- CMP New Generation API: http://localhost:8001/docs
 
-### Quy trình phát triển
-1. Tạo branch từ `develop` cho tính năng mới
-2. Phát triển và test trên branch đó
-3. Tạo Pull Request vào `develop`
-4. Code review và merge
-5. Periodic merge từ `develop` vào `main` cho releases
+## 👥 Đóng góp
 
-## 🤝 Đóng góp
-
-Chúng tôi chào đón mọi đóng góp! Vui lòng làm theo các bước sau:
-
-1. Fork repository
-2. Tạo branch mới (`git checkout -b feature/amazing-feature`)
+1. Fork project
+2. Tạo nhánh feature (`git checkout -b feature/amazing-feature`)
 3. Commit thay đổi (`git commit -m 'Add some amazing feature'`)
-4. Push lên branch (`git push origin feature/amazing-feature`)
-5. Mở Pull Request
-
-Xem thêm chi tiết tại [CONTRIBUTING.md](CONTRIBUTING.md).
+4. Push nhánh (`git push origin feature/amazing-feature`)
+5. Tạo Pull Request
 
 ## 📄 Giấy phép
 
-Dự án được phân phối dưới giấy phép MIT. Xem `LICENSE` để biết thêm thông tin.
+Dự án này được cấp phép theo Giấy phép MIT - xem file [LICENSE](LICENSE) để biết chi tiết.
 
 ## 📞 Liên hệ
 
@@ -242,4 +289,4 @@ Dự án được phân phối dưới giấy phép MIT. Xem `LICENSE` để bi�
 
 ---
 
-Dự án được phát triển như một phần của khóa học Capstone Project. © 2024
+© 2023-2024 Capstone E-Learning Project Team
