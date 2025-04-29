@@ -342,4 +342,4 @@ Dự án này được cấp phép theo [MIT License](./LICENSE).
 
 ---
 
-© 2023-2024 Capstone E-Learning Project Team
+© 2025-2026 Capstone E-Learning Project Team
